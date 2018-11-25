@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>Task edit</h1>
+<div mat-dialog-content class="dialog-content-custom">
+  <mat-form-field><input matInput [(ngModel)]="data.title"/></mat-form-field>
+  <mat-checkbox [(ngModel)]="data.completed">Is task completed?</mat-checkbox>
+</div>
+<mat-dialog-actions class="dialog-actions-custom">
+  <!--
+    <button mat-flat-button color="warn"><mat-icon>delete</mat-icon></button>
+  -->
+  <button mat-button (click)="onDeleteClick(data)">Delete task</button>
+  <button mat-button mat-dialog-close cdkFocusInitial>Ok</button>
+</mat-dialog-actions>
