@@ -28,11 +28,6 @@ export class TodoListComponent implements OnInit {
     });
   }
 
-  checkboxClick(e): void {
-    console.log('there');
-    console.log(this.todos);
-  }
-
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.todos, event.previousIndex, event.currentIndex);
   }

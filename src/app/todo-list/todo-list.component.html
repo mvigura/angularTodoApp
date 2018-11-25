@@ -1,5 +1,5 @@
 <mat-nav-list cdkDropList (cdkDropListDropped)="drop($event)">
-  <mat-list-item *ngFor="let todo of todos" cdkDrag (click)="checkboxClick()">
+  <mat-list-item *ngFor="let todo of todos" cdkDrag>
     <mat-checkbox matLine [(ngModel)]="todo.completed">{{
       todo.title
     }}</mat-checkbox>
