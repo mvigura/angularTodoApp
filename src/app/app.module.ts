@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { TodoModalDetailsComponent } from './todo-modal-details/todo-modal-details.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MomentModule } from 'ngx-moment';
 
 @NgModule({
   declarations: [AppComponent, TodoModalDetailsComponent, TodoListComponent],
@@ -15,7 +16,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     BrowserAnimationsModule,
     FormsModule,
     AngularMaterialModule,
-    DragDropModule
+    DragDropModule,
+    MomentModule
   ],
   entryComponents: [TodoListComponent, TodoModalDetailsComponent],
   providers: [],

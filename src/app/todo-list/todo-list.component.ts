@@ -3,6 +3,8 @@ import { Todo } from '../classes/todo';
 import { MatDialog } from '@angular/material';
 import { TodoModalDetailsComponent } from '../todo-modal-details/todo-modal-details.component';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { interval, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-todo-list',
@@ -11,9 +13,17 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 })
 export class TodoListComponent implements OnInit {
   @Input() todos: Todo[] = [];
+  now: Date;
   constructor(public dialog: MatDialog) {}
 
-  ngOnInit() {}
+  ngOnInit(): void {
+    this.now = new Date();
+    interval(30000).subscribe(value => {
+      this.now = new Date();
+    });
+    console.log(this.now);
+  }
+
   openDialog(todo): void {
     // e.preventDefault();
     const dialogRef = this.dialog.open(TodoModalDetailsComponent, {

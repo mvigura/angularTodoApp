@@ -11,10 +11,27 @@ export class TodoDataService {
 
   // Placeholder for todos
   todos: Todo[] = [
-    new Todo({ id: 1000, title: 'To do' }),
-    new Todo({ id: 1001, title: 'To do', completed: true }),
-    new Todo({ id: 1002, title: 'todo, todo, todo' }),
-    new Todo({ id: 1003, title: 'to doooo, dodododooodoooooo' })
+    new Todo({
+      id: 1000,
+      title: 'To do',
+      expireDate: new Date(new Date().getTime() + 0 * 60 * 1000)
+    }),
+    new Todo({
+      id: 1001,
+      title: 'To do',
+      completed: true,
+      expireDate: new Date(new Date().getTime() + 10 * 1000)
+    }),
+    new Todo({
+      id: 1002,
+      title: 'todo, todo, todo',
+      expireDate: new Date(new Date().getTime() + 30 * 60 * 1000)
+    }),
+    new Todo({
+      id: 1003,
+      title: 'to doooo, dodododooodoooooo',
+      expireDate: new Date(new Date().getTime() + 5 * 60 * 60 * 1000)
+    })
   ];
 
   constructor() {}
