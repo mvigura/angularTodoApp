@@ -1,0 +1,11 @@
+@import '~@angular/material/theming';
+
+.list-item {
+  &-subtitle {
+    margin-left: 25px;
+  }
+
+  &--expired {
+    background: red;
+  }
+}

@@ -1,6 +1,15 @@
 <h1 mat-dialog-title>Task edit</h1>
 <div mat-dialog-content class="dialog-content-custom">
   <mat-form-field><input matInput [(ngModel)]="data.title"/></mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input
+      matInput
+      type="datetime-local"
+      placeholder="Choose period"
+      autofocus=""
+      [(ngModel)]="data.expireDate"
+    />
+  </mat-form-field>
   <mat-checkbox [(ngModel)]="data.completed">Is task completed?</mat-checkbox>
 </div>
 <mat-dialog-actions class="dialog-actions-custom">

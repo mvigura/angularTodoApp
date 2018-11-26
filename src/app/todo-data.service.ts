@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Todo } from './classes/todo';
+import * as moment from 'moment';
 
 @Injectable({
   providedIn: 'root'
@@ -14,23 +15,31 @@ export class TodoDataService {
     new Todo({
       id: 1000,
       title: 'To do',
-      expireDate: new Date(new Date().getTime() + 0 * 60 * 1000)
+      expireDate: moment(new Date().getTime() + 3 * 60 * 1000).format(
+        moment.HTML5_FMT.DATETIME_LOCAL
+      )
     }),
     new Todo({
       id: 1001,
       title: 'To do',
       completed: true,
-      expireDate: new Date(new Date().getTime() + 10 * 1000)
+      expireDate: moment(new Date().getTime() + 2 * 30 * 1000).format(
+        moment.HTML5_FMT.DATETIME_LOCAL
+      )
     }),
     new Todo({
       id: 1002,
       title: 'todo, todo, todo',
-      expireDate: new Date(new Date().getTime() + 30 * 60 * 1000)
+      expireDate: moment(new Date().getTime() + 30 * 60 * 1000).format(
+        moment.HTML5_FMT.DATETIME_LOCAL
+      )
     }),
     new Todo({
       id: 1003,
       title: 'to doooo, dodododooodoooooo',
-      expireDate: new Date(new Date().getTime() + 5 * 60 * 60 * 1000)
+      expireDate: moment(new Date().getTime() + 5 * 60 * 60 * 1000).format(
+        moment.HTML5_FMT.DATETIME_LOCAL
+      )
     })
   ];
 

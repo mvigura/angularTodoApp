@@ -3,13 +3,12 @@ import { Todo } from '../classes/todo';
 import { MatDialog } from '@angular/material';
 import { TodoModalDetailsComponent } from '../todo-modal-details/todo-modal-details.component';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-import { interval, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-
+import { interval } from 'rxjs';
+import * as moment from 'moment';
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
-  styleUrls: ['./todo-list.component.less']
+  styleUrls: ['./todo-list.component.scss']
 })
 export class TodoListComponent implements OnInit {
   @Input() todos: Todo[] = [];
@@ -18,17 +17,22 @@ export class TodoListComponent implements OnInit {
 
   ngOnInit(): void {
     this.now = new Date();
-    interval(30000).subscribe(value => {
+    interval(3000).subscribe(value => {
       this.now = new Date();
     });
-    console.log(this.now);
+  }
+
+  isExpired(expireDate: Date) {
+    return moment(this.now)
+      .local()
+      .isAfter(expireDate);
   }
 
   openDialog(todo): void {
     // e.preventDefault();
     const dialogRef = this.dialog.open(TodoModalDetailsComponent, {
       width: '300px',
-      height: '280px',
+      height: '320px',
       data: todo
     });
 

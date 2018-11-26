@@ -2,12 +2,14 @@
   <mat-list-item
     *ngFor="let todo of todos"
     cdkDrag
-    [class.list-item-expire]="now > todo.expireDate"
+    [class.list-item--expired]="isExpired(todo.expireDate)"
   >
     <mat-checkbox matLine [(ngModel)]="todo.completed">{{
       todo.title
     }}</mat-checkbox>
-    {{ todo.expireDate | amTimeAgo }}
+    <div matLine>
+      <span class="list-item-subtitle">{{ todo.expireDate | amTimeAgo }}</span>
+    </div>
     <button mat-icon-button (click)="openDialog(todo)">
       <mat-icon>edit</mat-icon>
     </button>

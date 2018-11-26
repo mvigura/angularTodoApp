@@ -6,7 +6,7 @@ import { TodoDataService } from '../todo-data.service';
 @Component({
   selector: 'app-todo-modal-details',
   templateUrl: './todo-modal-details.component.html',
-  styleUrls: ['./todo-modal-details.component.less']
+  styleUrls: ['./todo-modal-details.component.scss']
 })
 export class TodoModalDetailsComponent {
   constructor(

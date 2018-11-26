@@ -5,19 +5,19 @@ import { Todo } from './classes/todo';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.less']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   newTodo: Todo = new Todo();
   avPeriods: object[] = [
-    { label: '15 minutes' },
-    { label: '1 hour' },
-    { label: '3 hours' },
-    { label: '12 hours' },
-    { label: '1 day' },
-    { label: '3 days' },
-    { label: '5 days' },
-    { label: '1 week' }
+    { label: '15 minutes', value: 15 * 60 * 1000 },
+    { label: '1 hour', value: 60 * 60 * 1000 },
+    { label: '3 hours', value: 3 * 60 * 60 * 1000 },
+    { label: '12 hours', value: 12 * 60 * 60 * 1000 },
+    { label: '1 day', value: 24 * 60 * 60 * 1000 },
+    { label: '3 days', value: 3 * 24 * 60 * 60 * 1000 },
+    { label: '5 days', value: 5 * 24 * 60 * 60 * 1000 },
+    { label: '1 week', value: 7 * 24 * 60 * 60 * 1000 }
   ];
   constructor(private todoDataService: TodoDataService) {}
 
