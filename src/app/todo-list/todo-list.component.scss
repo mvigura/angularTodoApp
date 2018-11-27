@@ -1,11 +1,27 @@
 @import '~@angular/material/theming';
 
-.list-item {
-  &-subtitle {
-    margin-left: 25px;
+@include mat-core();
+
+$primary: mat-palette($mat-deep-purple);
+
+.mat-nav-list .mat-list-item {
+  cursor: move;
+}
+
+.app-todo-list {
+  .list-item {
+    &-subtitle {
+      margin-left: 25px;
+    }
   }
 
-  &--expired {
-    background: red;
+  .mat-list-item {
+    &--expiring {
+      background: mat-color($mat-grey, 100);
+    }
+
+    &--expired {
+      background: mat-color($mat-deep-purple, 50);
+    }
   }
 }

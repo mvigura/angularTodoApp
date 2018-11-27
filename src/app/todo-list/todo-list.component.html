@@ -1,8 +1,13 @@
-<mat-nav-list cdkDropList (cdkDropListDropped)="drop($event)">
+<mat-nav-list
+  cdkDropList
+  (cdkDropListDropped)="drop($event)"
+  class="app-todo-list"
+>
   <mat-list-item
     *ngFor="let todo of todos"
     cdkDrag
-    [class.list-item--expired]="isExpired(todo.expireDate)"
+    [class.mat-list-item--expiring]="isExpiring(todo.expireDate)"
+    [class.mat-list-item--expired]="isExpired(todo.expireDate)"
   >
     <mat-checkbox matLine [(ngModel)]="todo.completed">{{
       todo.title
@@ -13,8 +18,6 @@
     <button mat-icon-button (click)="openDialog(todo)">
       <mat-icon>edit</mat-icon>
     </button>
-    <mat-checkbox *cdkDragPreview matLine [(ngModel)]="todo.completed">{{
-      todo.title
-    }}</mat-checkbox>
+    <span *cdkDragPreview> </span>
   </mat-list-item>
 </mat-nav-list>

@@ -12,19 +12,19 @@
         />
       </mat-form-field>
       <mat-form-field>
-        <mat-select placeholder="Choose period">
-          <mat-option *ngFor="let period of avPeriods" [value]="period.label">
+        <mat-select placeholder="Choose period" [(value)]="newTodo.expireDate">
+          <mat-option *ngFor="let period of avPeriods" [value]="period.value">
             {{ period.label }}
           </mat-option>
         </mat-select>
       </mat-form-field>
     </header>
-    <section class="main" *ngIf="todos.length > 0">
+    <section *ngIf="todos.length > 0">
       <app-todo-list [todos]="todos"></app-todo-list>
     </section>
     <footer class="footer" *ngIf="todos.length > 0">
       <span class="todo-count"
-        ><strong>{{ todos.length }}</strong>
+        ><strong>{{ countCompleted(todos) }}</strong>
         {{ todos.length == 1 ? 'item' : 'items' }} left</span
       >
     </footer>

@@ -28,6 +28,13 @@ export class TodoListComponent implements OnInit {
       .isAfter(expireDate);
   }
 
+  isExpiring(expireDate: Date) {
+    return moment(this.now)
+      .add(3, 'days')
+      .local()
+      .isAfter(expireDate);
+  }
+
   openDialog(todo): void {
     // e.preventDefault();
     const dialogRef = this.dialog.open(TodoModalDetailsComponent, {

@@ -37,7 +37,7 @@ export class TodoDataService {
     new Todo({
       id: 1003,
       title: 'to doooo, dodododooodoooooo',
-      expireDate: moment(new Date().getTime() + 5 * 60 * 60 * 1000).format(
+      expireDate: moment(new Date().getTime() + 7 * 24 * 60 * 60 * 1000).format(
         moment.HTML5_FMT.DATETIME_LOCAL
       )
     })
