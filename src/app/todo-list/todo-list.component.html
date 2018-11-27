@@ -8,6 +8,7 @@
     cdkDrag
     [class.mat-list-item--expiring]="isExpiring(todo.expireDate)"
     [class.mat-list-item--expired]="isExpired(todo.expireDate)"
+    [class.mat-list-item--completed]="todo.completed"
   >
     <mat-checkbox matLine [(ngModel)]="todo.completed">{{
       todo.title

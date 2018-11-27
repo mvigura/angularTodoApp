@@ -17,11 +17,16 @@ $primary: mat-palette($mat-deep-purple);
 
   .mat-list-item {
     &--expiring {
-      background: mat-color($mat-blue-gray, 50);
+      background: mat-color($mat-deep-purple, 50);
     }
 
     &--expired {
-      background: mat-color($mat-deep-purple, 50);
+      background: mat-color($mat-deep-purple, 100);
+    }
+
+    &--completed {
+      background: mat-color($mat-blue-gray, 50);
+      color: mat-color($mat-blue-gray, 300);
     }
   }
 }
