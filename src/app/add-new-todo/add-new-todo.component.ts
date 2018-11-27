@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { Todo } from '../classes/todo';
 import * as moment from 'moment';
 @Component({
@@ -6,7 +6,7 @@ import * as moment from 'moment';
   templateUrl: './add-new-todo.component.html',
   styleUrls: ['./add-new-todo.component.scss']
 })
-export class AddNewTodoComponent implements OnInit {
+export class AddNewTodoComponent {
   @Output() addNewTodo = new EventEmitter<Todo>();
   avPeriods: { label: string; value: number }[] = [
     { label: '15 minutes', value: 15 * 60 * 1000 },
@@ -20,8 +20,6 @@ export class AddNewTodoComponent implements OnInit {
   ];
   newTodo: Todo = new Todo({ expireDate: this.avPeriods[0].value });
   constructor() {}
-
-  ngOnInit() {}
 
   addTodo() {
     if (!this.newTodo.title) return;
