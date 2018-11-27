@@ -2,22 +2,7 @@
   <section class="todoapp">
     <header class="header">
       <h1>Todos</h1>
-      <mat-form-field class="example-full-width">
-        <input
-          matInput
-          placeholder="What needs to be done?"
-          autofocus=""
-          [(ngModel)]="newTodo.title"
-          (keyup.enter)="addTodo()"
-        />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-select placeholder="Choose period" [(value)]="newTodo.expireDate">
-          <mat-option *ngFor="let period of avPeriods" [value]="period.value">
-            {{ period.label }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+      <app-add-new-todo (addNewTodo)="addTodo($event)"></app-add-new-todo>
     </header>
     <section *ngIf="todos.length > 0">
       <app-todo-list [todos]="todos"></app-todo-list>

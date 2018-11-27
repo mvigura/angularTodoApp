@@ -8,9 +8,10 @@ import { TodoModalDetailsComponent } from './todo-modal-details/todo-modal-detai
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MomentModule } from 'ngx-moment';
+import { AddNewTodoComponent } from './add-new-todo/add-new-todo.component';
 
 @NgModule({
-  declarations: [AppComponent, TodoModalDetailsComponent, TodoListComponent],
+  declarations: [AppComponent, TodoModalDetailsComponent, TodoListComponent, AddNewTodoComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

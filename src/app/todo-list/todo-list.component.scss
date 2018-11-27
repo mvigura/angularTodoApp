@@ -17,7 +17,7 @@ $primary: mat-palette($mat-deep-purple);
 
   .mat-list-item {
     &--expiring {
-      background: mat-color($mat-grey, 100);
+      background: mat-color($mat-blue-gray, 50);
     }
 
     &--expired {
